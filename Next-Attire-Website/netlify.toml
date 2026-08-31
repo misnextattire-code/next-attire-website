@@ -1,0 +1,19 @@
+# Netlify site config for the Next Attire website.
+#
+# In the Netlify UI, if this "website" folder is a subfolder of a bigger
+# repo, set the site's "Base directory" to "website" so these paths
+# resolve correctly. If "website" itself is the repo root, leave Base
+# directory blank.
+
+[build]
+  command = "npm install"
+  publish = "frontend"
+  functions = "netlify/functions"
+
+# Forward every /api/... request from the frontend to the Express app,
+# running as a single serverless function. The Express routes in
+# backend/app.js keep their full "/api/..." paths unchanged.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200

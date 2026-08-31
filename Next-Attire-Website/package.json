@@ -1,0 +1,13 @@
+{
+  "name": "next-attire-netlify",
+  "private": true,
+  "description": "Dependency manifest for Netlify's build — installs what netlify/functions/api.js (and the backend/app.js it wraps) needs. Not used by the VPS/GoDaddy path, which installs from backend/package.json instead.",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "nodemailer": "^6.9.14",
+    "serverless-http": "^3.2.0"
+  }
+}
